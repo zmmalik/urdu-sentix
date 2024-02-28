@@ -8,3 +8,4 @@ instaloader
 google-api-python-client
 facebook-sdk
 tweepy
+flask
