@@ -1,0 +1,7 @@
+Class,Precision,Recall,F1-score,Support,Classifier
+Negative,0.42,0.70,0.52,4014,Multinomial NB
+Positive,0.02,0.01,0.01,3972,Multinomial NB
+Negative,0.00,0.00,0.00,4014,Random Forest Classifier
+Positive,0.41,0.71,0.52,3972,Random Forest Classifier
+Negative,0.01,0.00,0.00,4014,Decision Tree Classifier
+Positive,0.41,0.71,0.52,3972,Decision Tree Classifier

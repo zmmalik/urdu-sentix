@@ -1,2 +1,10 @@
 scikit-learn
 pandas
+numpy
+matplotlib
+ngram
+nltk
+instaloader
+google-api-python-client
+facebook-sdk
+tweepy

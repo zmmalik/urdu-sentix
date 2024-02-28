@@ -1,0 +1,11 @@
+roman_urdu_stopwords = ["a", "an", "the", "aur", "ek", "ho", "is", "ka", "ke", "ko", "mein", "ne", "se", "to", "ye", "ha", "ki",
+                        "hain", "hota", "karta", "kar", "kiya", "kyun", "kaise", "jab", "tak", "jaise", "jis", "kya", "kyon",
+                        "kahan", "kis", "kisne", "kitna", "mjse", "kitni", "koi", "kuch", "lekin", "mujhe", "main", "mera", "mere", "hum",
+                        "ham", "humara", "humare", "tum", "tumhara", "tumhare", "aap", "aapka", "aapki", "aapke", "hamara",
+                        "hamari", "hamaare", "apna", "apni", "apne", "yeh", "yahan", "wahan", "voh", "uss", "usne", "unka", "unki",
+                        "unke", "kisi", "kuchh", "isse", "isse", "iss", "iska", "iske", "isne", "phir", "kyunki", "agar", "kuch",
+                        "bhi", "ab", "fir", "tab", "us", "ne", "liya", "jata", "ja", "dosto", "ho", "hai", "jana", "ja", "ga",
+                        "na", "accha", "achha", "acha", "bura", "hrha", "diya", "gaya", "gayi", "ga", "gi", "hui", "hua", "ho", "ha", "hain",
+                        "kar", "karna", "kare", "kaam", "kr", "ra", "raha", "rahe", "rha", "rhe", "ho", "haan", "han", "hona", "hote",
+                        "he", "she", "it", "we", "they", "at", "on", "in", "from", "by", "with", "for", "to", "of", "as", "or",
+                        "and", "but", "not", "is", "was", "are", "were", "am"]
