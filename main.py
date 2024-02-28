@@ -9,5 +9,4 @@ def main():
     nb_confusion_result, rf_confusion_result, dt_confusion_result = confusion_matrix.evaluate_models(test_labels, nb_predictions, rf_predictions, dt_predictions)
     nb_accuracy_result, rf_accuracy_result, dt_accuracy_result = accuracy_evaluation.evaluate_accuracy(test_labels, nb_predictions, rf_predictions, dt_predictions)
     save_result_to_csv.save_results(nb_confusion_result, rf_confusion_result, dt_confusion_result, nb_accuracy_result, rf_accuracy_result, dt_accuracy_result, nb_classification_report, rf_classification_report, dt_classification_report)
-    user_interface.display_results(evaluation_results)
 main()

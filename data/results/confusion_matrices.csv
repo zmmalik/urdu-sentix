@@ -1,4 +1,4 @@
 Classifier,True Positive,False Positive,False Negative,True Negative
 Multinomial NB,2809,1205,3946,26
-Random Forest Classifier,1,4013,1150,2822
+Random Forest Classifier,4,4010,1150,2822
 Decision Tree Classifier,7,4007,1161,2811
