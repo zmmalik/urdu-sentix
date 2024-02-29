@@ -1,7 +1,7 @@
 import instaloader
 import os
 
-def insta_config():
+def get_insta_comments():
     max_comments = 5000
     id = os.environ.get('INSTA_USER_ID')
     loader = instaloader.Instaloader()

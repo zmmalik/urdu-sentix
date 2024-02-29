@@ -83,10 +83,10 @@
             Social Media
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" onclick="selectSocialMedia('Facebook')">Facebook</a>
-            <!-- <a class="dropdown-item disabled" disabled onclick="selectSocialMedia('YouTube')">YouTube</a> -->
-            <a class="dropdown-item" onclick="selectSocialMedia('Instagram')">Instagram</a>
-            <!-- <a class="dropdown-item disabled" disabled onclick="selectSocialMedia('Twitter')">Twitter</a> -->
+            <a class="dropdown-item" onclick="selectSocialMedia('facebook')">Facebook</a>
+            <!-- <a class="dropdown-item disabled" disabled onclick="selectSocialMedia('youTube')">YouTube</a> -->
+            <a class="dropdown-item" onclick="selectSocialMedia('instagram')">Instagram</a>
+            <!-- <a class="dropdown-item disabled" disabled onclick="selectSocialMedia('twitter')">Twitter</a> -->
           </div>
           <select id="socialMediaSelect" class="d-none"></select>
         </div>
@@ -115,25 +115,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr id="sentiment-analysis">
               <td>Comment 1</td>
               <td>Positive</td>
-            </tr>
-            <tr>
-              <td>Comment 2</td>
-              <td>Neutral</td>
-            </tr>
-            <tr>
-              <td>Comment 3</td>
-              <td>Negative</td>
-            </tr>
-            <tr>
-              <td>Comment 4</td>
-              <td>Positive</td>
-            </tr>
-            <tr>
-              <td>Comment 5</td>
-              <td>Neutral</td>
             </tr>
           </tbody>
         </table>
@@ -150,19 +134,21 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     function selectSocialMedia(socialMedia) {
-      document.getElementById("socialMediaSelect").value = socialMedia;
+      document.getElementById("socialMediaSelect").innerHTML = socialMedia;
+      document.getElementById("dropdownMenuButton").innerHTML = socialMedia;
     }
     function collectData() {
-      const socialMedia = document.getElementById("socialMediaSelect").value;
-      fetch('/api/collect-comments', {
-        method: 'POST',
+      const socialMedia = document.getElementById("socialMediaSelect").innerHTML;
+      console.log(socialMedia);
+      fetch(`/get-comments/${socialMedia}`, {
+        method: 'GET',
         headers: {
-          'Content-Type': 'application/json'
+          'Accept': 'application/json'
         },
-        body: JSON.stringify({ socialMedia })
       }).then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
+        if (response.status == 'ok') {
+          console.log(response);
+          return response
         }
         return response.json();
       }).then(data => {
