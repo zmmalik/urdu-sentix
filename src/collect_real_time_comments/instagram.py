@@ -1,19 +1,17 @@
 import instaloader
+import os
 
-# Create an instance of Instaloader
-loader = instaloader.Instaloader()
-
-# Login (optional)
-# loader.login("your_username", "your_password")
-
-# Retrieve comments from a specific post
-post_url = 'https://www.instagram.com/p/POST_SHORTCODE/'
-post = instaloader.Post.from_shortcode(loader.context, POST_SHORTCODE)
-
-comments = []
-for comment in post.get_comments():
-    comments.append(comment.text)
-
-# Print or process the comments as needed
-for comment in comments:
-    print(comment)
+def insta_config():
+    max_comments = 5000
+    id = os.environ.get('INSTA_USER_ID')
+    loader = instaloader.Instaloader()
+    profile = instaloader.Profile.from_username(loader.context, id)
+    all_comments = []
+    for item in profile.get_posts():
+        post = instaloader.Post.from_shortcode(loader.context, item.mediaid)
+        comments = post.get_comments()
+        all_comments.extend(comments)
+        if(len(all_comments) >= max_comments):
+            break
+    comment_messages = [comment["text"] for comment in all_comments]
+    return comment_messages

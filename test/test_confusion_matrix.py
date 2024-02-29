@@ -1,5 +1,4 @@
 import unittest
-import pandas as pd
 import sys
 sys.path.append('../')
 from src.confusion_matrix import evaluate_models
