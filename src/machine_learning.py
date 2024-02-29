@@ -29,5 +29,5 @@ def train_models(train_data, test_data, train_labels, test_labels):
     dt_classification_report = classification_report(test_labels, dt_predictions)
     
     print('Machine Learning Done!')
-    return test_labels, nb_predictions, rf_predictions, dt_predictions, nb_classification_report, rf_classification_report, dt_classification_report
+    return vectorizer, nb_model, rf_model, dt_model, test_labels, nb_predictions, rf_predictions, dt_predictions, nb_classification_report, rf_classification_report, dt_classification_report
     

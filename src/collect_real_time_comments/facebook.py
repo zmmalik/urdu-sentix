@@ -1,4 +1,5 @@
 import os
+import facebook
 import sys
 sys.path.append('../../')
 from config import fb_config
@@ -6,8 +7,10 @@ def get_fb_comments():
   max_comments = 5000
   limit = 25
   id = os.environ.get('FB_USER_ID')
-  graph = fb_config()
-  posts = graph.get_connections(id=id, connection_name='posts', limit=limit)
+  access_token = "6cd2141052704e43b1e3eaa8f9a8326a"
+  version = "19.0"
+  graph = facebook.GraphAPI(access_token = access_token, version = "19.0")
+  posts = graph.get_connections(id="ImranKhanOfficial", connection_name='posts', limit=limit)
   all_comments = []
   for post in posts['data']:
     offset = 0
